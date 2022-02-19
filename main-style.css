@@ -1,3 +1,5 @@
+@import url("https://iridescent.netlify.app/main.css");
+
 .container--hero {
     display: grid;
     margin: 0px;
@@ -18,7 +20,6 @@
 .navbar {
     grid-area: navbar;
     width: 100%;
-    outline: 2px solid red;
 }
 
 .content {
@@ -42,7 +43,6 @@
 .footer {
     grid-area: footer;
     width: 100%;
-    background-color: bisque;
 }
 
 /* Header Styling */
@@ -107,3 +107,35 @@
 .glass__icon--search {
     background-color: white;
 }
+
+.glass__footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--white);
+    border: 2px solid var(--component-grey-01);
+}
+
+.glass__footer--content {
+    width: 40%;
+    flex-direction: column;
+    border-bottom: 1px solid var(--mio-theme-color-surface-variant);
+    text-align: center;
+    padding: 0rem 4rem;
+}
+
+.nav__links--footer {
+    color: var(--mio-theme-color-primary);
+}
+
+.nav__links--footer:hover {
+    color: var(--black);
+}
+
+.icon--footer {
+    font-size: 40px;
+    color: var(--component-red-05);
+}
+
+
