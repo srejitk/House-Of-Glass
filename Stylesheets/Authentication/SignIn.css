@@ -1,0 +1,133 @@
+/* Sign In Styles */
+
+.glass__form {
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.glass__input {
+    background-color: var(--component-grey-01);
+    color: var(--black);
+    font-weight: 500;
+}
+
+.glass__input::placeholder {
+    color: var(--component-grey-05);
+}
+
+.glass__btn {
+    width: 21.5rem;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 350ms;
+    border: 2px solid transparent;
+}
+
+.glass__btn:hover {
+    border: none;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 350ms;
+}
+
+.glass__btn-1:hover {
+    color: var(--component-blue-05);
+    border: 2px solid var(--component-grey-01);
+}
+
+.glass__btn-2 {
+    background-color: var(--white);
+    color: var(--component-blue-05);
+    border: 2px solid var(--component-grey-01);
+}
+
+.glass__btn-2:hover {
+    color: var(--white);
+    border: 2px solid var(--component-grey-01);
+}
+
+.glass__form--wrapper {
+    background-color: var(--white);
+    margin: 1rem auto;
+    max-width: max-content;
+    min-width: fit-content;
+    gap: 1rem;
+    padding: 1rem;
+    height: calc(width);
+}
+
+.text--terms {
+    width: 60%;
+}
+
+.glass__form--image {
+    border-radius: 50%;
+    margin: 1rem auto;
+    max-width: 37.5rem;
+    min-width: 15rem;
+    max-height: 37.5rem;
+    min-height: 15rem;
+}
+
+.glass__form--image img {
+    width: 100%;
+    height: 32rem;
+    width: 32rem;
+    border-radius: 50%;
+}
+
+.line__breaker {
+    width: 2px;
+    height: 70vh;
+    background-color: var(--component-grey-01);
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.content {
+    background-color: var(--white);
+    align-items: center;
+}
+
+.glass__input--options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    width: inherit;
+}
+
+.glass__form--input {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 320px) and (max-width:570px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .glass__form--image {
+        order: -1;
+    }
+
+    .line__breaker {
+        width: 30rem;
+        height: 2px;
+        background-color: var(--component-grey-01);
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
+
+    .glass__search {
+        width: 300px;
+    }
+
+    .glass__hero--title {
+        display: none;
+    }
+
+
+}

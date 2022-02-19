@@ -1,0 +1,86 @@
+/* Sign Up Styles */
+
+.glass__form {
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.glass__input {
+    background-color: var(--component-grey-01);
+    color: black;
+    font-weight: 500;
+}
+
+.glass__input::placeholder {
+    color: #414141;
+}
+
+.glass__btn {
+    width: 21.5rem;
+    border: none;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 350ms;
+    border: 2px solid transparent;
+}
+
+
+.glass__btn:hover {
+    border: none;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 350ms;
+}
+
+.glass__btn-1:hover {
+    color: var(--component-blue-05);
+    border: 2px solid var(--component-grey-01);
+}
+
+
+.glass__btn-2 {
+    background-color: var(--white);
+    color: var(--component-blue-05);
+    border: 2px solid var(--component-grey-01);
+}
+
+.glass__btn-2:hover {
+    color: var(--white);
+    border: 2px solid var(--component-grey-01);
+}
+
+.glass__form--wrapper {
+    background-color: var(--white);
+    margin: 1rem auto;
+    max-width: max-content;
+    min-width: fit-content;
+    gap: 1rem;
+    padding: 1rem;
+    height: calc(width);
+}
+
+.text--terms {
+    width: 60%;
+}
+
+.glass__form--image {
+    border-radius: 50%;
+    margin: 1rem auto;
+    max-width: 37.5rem;
+    min-width: 15rem;
+    max-height: 37.5rem;
+    min-height: 15rem;
+}
+
+.glass__form--image img {
+    width: 100%;
+    height: 32rem;
+    width: 32rem;
+    border-radius: 50%;
+}
+
+.line__breaker {
+    position: absolute;
+    width: 2px;
+    height: 70vh;
+    background-color: var(--component-grey-01);
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
