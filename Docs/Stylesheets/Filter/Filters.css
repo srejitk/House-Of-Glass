@@ -1,0 +1,35 @@
+/* Filter Page */
+.glass__filter {
+    overflow-y: scroll;
+    width: 100%;
+    max-height: calc(100vh);
+}
+
+.glass__input {
+    justify-content: flex-end;
+    width: 100%;
+    flex-direction: row-reverse;
+    align-items: center;
+
+}
+
+.glass__input--column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.slider--labels {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+}
+
+.glass__category,
+.glass__rating,
+.glass__sort,
+.glass__slider {
+    background-color: #F7f7f7;
+    margin-bottom: 1rem;
+}
