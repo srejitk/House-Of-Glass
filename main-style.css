@@ -1,4 +1,11 @@
 @import url("https://iridescent.netlify.app/main.css");
+@import "/Stylesheets/Authentication/SignIn.css";
+@import "/Stylesheets/Authentication/Signup.css";
+@import "/Stylesheets/Filter/Filters.css";
+@import "/Stylesheets/Homepage/Homepage.css";
+@import "/Stylesheets/Product_Listing/ProductListing.css";
+@import "/Stylesheets/Cart_Management/Cart.css";
+@import "/Stylesheets/Wishlist_Management/Wishlist.css";
 
 .container--hero {
     display: grid;
@@ -25,19 +32,27 @@
 .content {
     grid-area: content;
     width: 100%;
-    background-color: green;
+    background-color: white;
+    align-items: center;
 }
 
-.categories {
-    grid-area: categories;
-    width: 100%;
-    background-color: yellow;
+body {
+    min-width: 100%;
 }
 
-.highlights {
-    grid-area: highlights;
-    width: 100%;
-    background-color: hotpink;
+.container--single {
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    height: 100vh;
+    gap: 20px 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4rem auto 19rem;
+    grid-template-areas:
+        "navbar"
+        "content"
+        "footer";
 }
 
 .footer {
@@ -92,7 +107,7 @@
     font-size: 16px;
     font-weight: bold;
     width: fit-content;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border-radius: 64px;
 }
 
