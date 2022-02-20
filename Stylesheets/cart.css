@@ -1,0 +1,37 @@
+   /* Cart Page */
+
+   .glass__checkout {
+    width: 35%;
+    padding: 1rem 2rem;
+    top: 100px;
+    right: 0px;
+    transform: translate(-50%, 50%);
+    margin-top: -3rem;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+
+
+.glass__container {
+    display: flex;
+    max-width: 60%;
+    width: inherit;
+    margin: 1rem 1rem 1rem 8rem;
+}
+
+.items--sum,
+.items--discount,
+.items--delivery,
+.items--total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.glass__subtitle {
+    width: 100%;
+
+}
