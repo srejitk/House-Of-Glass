@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="/main-style.css">
+    <link rel="stylesheet" href="/Misc/utils.css">
+    <link rel="stylesheet" href="https://iridescent.netlify.app/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<style>
+    body {
+        min-width: 100%;
+    }
+
+    .container--single {
+        display: grid;
+        margin: 0px;
+        padding: 0px;
+        max-width: 100%;
+        height: 100vh;
+        gap: 20px 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4rem auto 19rem;
+        grid-template-areas:
+            "navbar"
+            "content"
+            "footer";
+    }
+
+    .content {
+        background-color: var(--white);
+        align-items: center;
+        height: 100vh;
+    }
+
+
+    .glass__input--options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 100%;
+        width: inherit;
+    }
+
+    .glass__form--input {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
+    }
+
+    .outline {
+        outline: 2px solid
+    }
+
+
+
+    .box-shadow {
+        box-shadow: 0px 2px 4px rgba(97, 97, 97, 0.18), 0px 4px 8px rgba(97, 97, 97, 0.18);
+    }
+
+    .glass__footer {
+        flex-direction: column;
+    }
+
+    .light--text {
+        color: white;
+
+    }
+
+    .badge--icon {
+        top: 10px;
+        right: 10px;
+        transform: translate(50%, -50%);
+    }
+
+    /* Add in Utils */
+    .position-fixed {
+        position: fixed;
+    }
+
+    .top {
+        top: 0;
+    }
+
+    .left {
+        left: 0;
+    }
+
+    .right {
+        right: 0;
+    }
+
+    .bottom {
+        bottom: 0;
+    }
+
+    .gap4 {
+        gap: 4px;
+    }
+
+    /* Fix in Cards */
+    .cover--vertical {
+        height: max-content;
+    }
+
+    /* Filter Page */
+    .glass__filter {
+        overflow-y: scroll;
+        width: 100%;
+        max-height: calc(100vh);
+    }
+
+    .glass__container--product {
+        height: calc(100vh);
+        overflow-y: scroll;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .content--grid {
+        display: grid;
+        grid-template-columns: 2fr 8fr;
+    }
+
+    .glass__input {
+        justify-content: flex-end;
+        width: 100%;
+        flex-direction: row-reverse;
+        align-items: center;
+
+    }
+
+    .glass__input--column {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .slider--labels {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .glass__category,
+    .glass__rating,
+    .glass__sort,
+    .glass__slider {
+        background-color: #F7f7f7;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<body>
+    <div class="container--single">
+        <!-- Header HTML -->
+        <header id="header" class="glass__header">
+            <div class="glass__navbar">
+                <div class="glass__hero--logo">
+                    <a class="glass__hero--sidebar">
+                        <span id="hamburger_open" class="material-icons icon--sidebar">menu</span>
+                        <span id="hamburger_close" class="material-icons icon--sidebar">menu_open</span>
+                        <h3 class="glass__hero--title header-5">House Of Glass</h3>
+
+
+                    </a>
+                </div>
+                <div class="glass__header--search input__container">
+                    <input type="search" class="input__field glass__search br-24 position-relative"
+                        placeholder="What today?" name="searchbar" id="search-bar">
+                    <Button class="btn material-icons glass__icon--search  md-24 m-1l">search</Button>
+                </div>
+                <div class="glass__header--links">
+                    <ul class="glass__header--ul flex-mid-center">
+                        <a href="/index.html" class="header glass__links hoverOn--round">Home</a>
+                        <a href="/index.html" class="header glass__links hoverOn--round">Sign Out</a>
+                        <a href="/Docs/Cart.html"><span
+                                class="material-icons glass__links hoverOn--round  position-relative">shopping_cart
+                                <div class="badge badge--small badge--icon flex-mid-center light--text">1</div>
+                            </span></a>
+                        <a href="/Docs/Wishlist.html"><span
+                                class="material-icons glass__links hoverOn--round position-relative">favorite
+                                <div class="badge badge--small badge--icon flex-mid-center light--text">4</div>
+                            </span></a>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main class="content content--grid flex--row--nowrap position-relative">
+            <div class="glass__filter">
+                <h3 class="header-6 m-1l m-1b">Filter</h3>
+
+                <button class="btn btn--link btn--small m-1">
+                    Clear <span class="material-icons">clear</span>
+                </button>
+                <div class="glass__category m-1l p-16 box-shadow gap20">
+                    <p class="subtitle-1 m-1b ">Categories</p>
+                    <!-- Checkbox Input -->
+                    <div class="input__container gap4 glass__input">
+                        <label for="checkbox" class="input--sidelabel">Category 1</label>
+                        <input type="checkbox" id="checkbox" class=" input--field--checkbox" required="">
+                    </div>
+                    <!-- Checkbox Input -->
+                    <div class="input__container gap4 glass__input">
+                        <label for="checkbox" class="input--sidelabel">Category 2</label>
+                        <input type="checkbox" id="checkbox" class=" input--field--checkbox" required="">
+                    </div>
+                    <!-- Checkbox Input -->
+                    <div class="input__container gap4 glass__input">
+                        <label for="checkbox" class="input--sidelabel">Category 3</label>
+                        <input type="checkbox" id="checkbox" class=" input--field--checkbox" required="">
+                    </div>
+                </div>
+                <div class="glass__rating m-1l p-16 box-shadow gap20">
+                    <p class="subtitle-1 m-1b ">Rating</p>
+                    <!-- Radio Input -->
+                    <div class="input__container glass__input gap4">
+                        <label for="4-star" class="input--sidelabel">4 Star & Above</label>
+                        <input type="radio" id="4-star" class=" input--field--checkbox" required="">
+                    </div>
+                    <!-- Radio Input -->
+                    <div class="input__container glass__input gap4">
+                        <label for="3-star" class="input--sidelabel">3 Star & Above</label>
+                        <input type="radio" id="3-star" class=" input--field--checkbox" required="">
+                    </div>
+                    <!-- Radio Input -->
+                    <div class="input__container glass__input gap4">
+                        <label for="2-star" class="input--sidelabel">2 Star & Above</label>
+                        <input type="radio" id="2-star" class=" input--field--checkbox" required="">
+                    </div>
+                </div>
+                <div class="glass__sort m-1l p-16 box-shadow gap20">
+                    <p class="subtitle-1 m-1b ">Sort By</p>
+                    <!-- Radio Input -->
+                    <div class="input__container glass__input gap4">
+                        <label for="price-asc" class="input--sidelabel">Price : Low to High</label>
+                        <input type="radio" id="price-asc" class=" input--field--checkbox" required="">
+                    </div>
+                    <!-- Radio Input -->
+                    <div class="input__container glass__input gap4">
+                        <label for="price-dsc" class="input--sidelabel">Price : High to Low</label>
+                        <input type="radio" id="price-dsc" class=" input--field--checkbox" required="">
+                    </div>
+                </div>
+                <div class="glass__slider m-1l p-16 box-shadow gap20">
+                    <p class="subtitle-1 m-1b ">Sort By</p>
+                    <!-- Radio Input -->
+                    <div class="input__container glass__input--column  gap4">
+                        <div class="slider--labels">
+                            <p class="subtitle-2">Rs. 500</p>
+                            <p class="subtitle-2">Rs. 2500</p>
+                            <p class="subtitle-2">Rs. 5000</p>
+                        </div>
+                        <input type="range" id="price-asc" class=" input--field--checkbox" required="">
+                    </div>
+                </div>
+            </div>
+            <div class="glass__container--product p-24  flex--row--wrap gap4 ">
+
+                <!-- Vertical Card -->
+                <div class="card card--vertical box-shadow">
+                    <div class="card__cover cover--vertical image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+                        <span class="material-icons card__icon">favorite</span>
+                    </div>
+                    <div class="card__contents--vertical">
+                        <div class="card__content card__text--vertical">
+                            <h5 class="header-5">The most expensive stuff you can imagine</h5>
+                            <div class="container--row">
+                                <p class="subtitle-1 item--sale text--primary">Rs. 999<p class="body-2 item--price">Rs.
+                                        2443</p>
+                                    <p class="subtitle-1 item--info text--grey">Free Shipping</p>
+                                </p>
+                            </div>
+                            <div class="rating">
+                                <p class="subtitle-2 text--grey">4.2</p>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star_half</span>
+                            </div>
+                            <div class="container--row m-1t">
+                                <div class="btn btn--small btn--small--round">Buy Now</div>
+                                <div class="btn btn--small btn--outline--primary">
+                                    <span class="material-icons text--primary">shopping_cart</span>
+                                    <p class="subtitle-1 btn--text text--primary">To cart</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Vertical Card -->
+                <div class="card card--vertical box-shadow">
+                    <div class="card__cover cover--vertical image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+                        <span class="material-icons card__icon">favorite</span>
+                    </div>
+                    <div class="card__contents--vertical">
+                        <div class="card__content card__text--vertical">
+                            <h5 class="header-5">The most expensive stuff you can imagine</h5>
+                            <div class="container--row">
+                                <p class="subtitle-1 item--sale text--primary">Rs. 999<p class="body-2 item--price">Rs.
+                                        2443</p>
+                                    <p class="subtitle-1 item--info text--grey">Free Shipping</p>
+                                </p>
+                            </div>
+                            <div class="rating">
+                                <p class="subtitle-2 text--grey">4.2</p>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star_half</span>
+                            </div>
+                            <div class="container--row m-1t">
+                                <div class="btn btn--small btn--small--round">Buy Now</div>
+                                <div class="btn btn--small btn--outline--primary">
+                                    <span class="material-icons text--primary">shopping_cart</span>
+                                    <p class="subtitle-1 btn--text text--primary">To cart</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Vertical Card -->
+                <div class="card card--vertical box-shadow">
+                    <div class="card__cover cover--vertical image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+                        <span class="material-icons card__icon">favorite</span>
+                    </div>
+                    <div class="card__contents--vertical">
+                        <div class="card__content card__text--vertical">
+                            <h5 class="header-5">The most expensive stuff you can imagine</h5>
+                            <div class="container--row">
+                                <p class="subtitle-1 item--sale text--primary">Rs. 999<p class="body-2 item--price">Rs.
+                                        2443</p>
+                                    <p class="subtitle-1 item--info text--grey">Free Shipping</p>
+                                </p>
+                            </div>
+                            <div class="rating">
+                                <p class="subtitle-2 text--grey">4.2</p>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star_half</span>
+                            </div>
+                            <div class="container--row m-1t">
+                                <div class="btn btn--small btn--small--round">Buy Now</div>
+                                <div class="btn btn--small btn--outline--primary">
+                                    <span class="material-icons text--primary">shopping_cart</span>
+                                    <p class="subtitle-1 btn--text text--primary">To cart</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Vertical Card -->
+                <div class="card card--vertical box-shadow">
+                    <div class="card__cover cover--vertical image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+                        <span class="material-icons card__icon">favorite</span>
+                    </div>
+                    <div class="card__contents--vertical">
+                        <div class="card__content card__text--vertical">
+                            <h5 class="header-5">The most expensive stuff you can imagine</h5>
+                            <div class="container--row">
+                                <p class="subtitle-1 item--sale text--primary">Rs. 999<p class="body-2 item--price">Rs.
+                                        2443</p>
+                                    <p class="subtitle-1 item--info text--grey">Free Shipping</p>
+                                </p>
+                            </div>
+                            <div class="rating">
+                                <p class="subtitle-2 text--grey">4.2</p>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star_half</span>
+                            </div>
+                            <div class="container--row m-1t">
+                                <div class="btn btn--small btn--small--round">Buy Now</div>
+                                <div class="btn btn--small btn--outline--primary">
+                                    <span class="material-icons text--primary">shopping_cart</span>
+                                    <p class="subtitle-1 btn--text text--primary">To cart</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Vertical Card -->
+                <div class="card card--vertical box-shadow">
+                    <div class="card__cover cover--vertical image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+                        <span class="material-icons card__icon">favorite</span>
+                    </div>
+                    <div class="card__contents--vertical">
+                        <div class="card__content card__text--vertical">
+                            <h5 class="header-5">The most expensive stuff you can imagine</h5>
+                            <div class="container--row">
+                                <p class="subtitle-1 item--sale text--primary">Rs. 999<p class="body-2 item--price">Rs.
+                                        2443</p>
+                                    <p class="subtitle-1 item--info text--grey">Free Shipping</p>
+                                </p>
+                            </div>
+                            <div class="rating">
+                                <p class="subtitle-2 text--grey">4.2</p>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star</span>
+                                <span class="material-icons md-18  star_selected">star_half</span>
+                            </div>
+                            <div class="container--row m-1t">
+                                <div class="btn btn--small btn--small--round">Buy Now</div>
+                                <div class="btn btn--small btn--outline--primary">
+                                    <span class="material-icons text--primary">shopping_cart</span>
+                                    <p class="subtitle-1 btn--text text--primary">To cart</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+        <footer class="glass__footer footer">
+            <div class="glass__footer--content flex-mid-center text--center">
+                <span class="material-icons md-48 icon--footer text--center">favorite</span>
+                <p class="body-1 text--footer text--center">House Of Glass was made with the intention of creating a
+                    customer friendly store
+                    which put the users satisfaction first. We hope you liked it. Feel free to connect and provide
+                    suggestions from the below means. </p>
+                <div class="nav__links__container">
+                    <ul class="nav__links__ul">
+                        <a href="https://www.twitter.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">Twitter</a>
+                        <a href="https://www.github.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">Github</a>
+                        <a href="https://www.linkedin.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">LinkedIn</a>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>

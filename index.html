@@ -7,9 +7,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House Of Glass</title>
     <link rel="stylesheet" href="main-style.css">
+    <link rel="stylesheet" href="/Misc/utils.css">
     <link rel="stylesheet" href="https://iridescent.netlify.app/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
+<style>
+    .light-mode {
+        --background-color: #F4F2F7;
+        --forground-color: #FFFFFF;
+        --foreground-color-2: #F9F9F9;
+        --primary-text: #27242C;
+        --secondary-text: #8A8A8E;
+    }
+
+    .dark-mode {
+        --background-color: #181719;
+        --forground-color: #27242C;
+        --foreground-color-2: #3D3A41;
+        --primary-text: #FFFFFF;
+        --secondary-text: #F3F3F9;
+    }
+
+    .content--homepage {
+        grid-area: content;
+        width: 100%;
+        background-color: var(--background-color);
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        overflow-x: scroll;
+    }
+
+    .glass__categories {
+        grid-area: categories;
+        width: 100%;
+        background-color: var(--forground-color);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border: 2px solid var(--component-grey-01);
+
+    }
+
+    .glass__highlights {
+        grid-area: highlights;
+        width: 100%;
+        background-color: var(--foreground-color);
+        color: var(--primary-text);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border: 2px solid var(--component-grey-01);
+
+    }
+
+    section {
+        height: 100%;
+        min-width: 100vw;
+        background-repeat: no-repeat;
+        background-size: cover;
+        scroll-snap-align: start;
+    }
+
+    .banner_section-1 {
+        background-image: url("https://images.unsplash.com/photo-1478104718532-efe04cc3ff7f");
+    }
+
+    .banner_section-2 {
+        background-image: url("https://images.unsplash.com/photo-1472437774355-71ab6752b434");
+    }
+
+    .banner_section-3 {
+        background-image: url("https://images.unsplash.com/photo-1572985025058-f27aeca1b8bf");
+    }
+
+    .glass__categories--container {
+        background-color: var(--foreground-color-2);
+        width: 90%;
+        height: 80%;
+        overflow-x: scroll;
+        padding: 1rem 3rem;
+        display: flex;
+        justify-content: flex-start;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .glass__categories--title {
+        display: flex;
+        background-color: var(--foreground-color);
+        flex-direction: column;
+        height: 80%;
+        width: 60%;
+        max-width: 80%;
+        padding: 0rem 2rem;
+    }
+
+    .glass__categories--title>.subtitle-1 {
+        width: 50%;
+
+    }
+
+    .box-shadow-2 {
+        transition: transform cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+    }
+
+    .box-shadow-2:hover {
+        box-shadow: 2px 2px 4px rgba(97, 97, 97, 0.18), 4px 4px 8px rgba(97, 97, 97, 0.18);
+        transform: scale(1.1);
+        transition: transform cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+    }
+</style>
 
 <body>
     <div class="container--hero">
@@ -30,18 +138,139 @@
                 </div>
                 <div class="glass__header--links">
                     <ul class="glass__header--ul flex-mid-center">
-                        <a href="/docs/Introduction.html" class="header glass__links hoverOn--round">Login</a>
-                        <a href="https://www.github.com/srejitk" class="header glass__links hoverOn--round">Sign Up</a>
+                        <a href="/Docs/sign-in.html" class="header glass__links hoverOn--round">Login</a>
+                        <a href="/Docs/sign-up.html" class="header glass__links hoverOn--round">Sign Up</a>
                     </ul>
                 </div>
             </div>
         </header>
-        <main class="content">content
+        <main class="content--homepage">
+            <section class="banner_section-1"></section>
+            <section class="banner_section-2"></section>
+            <section class="banner_section-3"></section>
         </main>
-        <section class="categories">categories
+        <section class="glass__categories">
+            <div class="glass__categories--title">
+                <h4 class="header-4 m-1b">Categories</h4>
+                <p class="subtitle-1 m-1b">Browse through the various categories available to us.</p>
+                <button class="btn btn--link btn--rtl">
+                    <span class="material-icons">arrow_forward</span>
+                    <a href="/Docs/Product-Listing.html">Browse</a>
+                </button>
+            </div>
+            <div class="glass__categories--container box-shadow br-12 flex-mid-center">
+                <div class="card card--mini m-1 box-shadow-2">
+                    <div class="card__img--mini image--responsive">
+                        <img src="https://picsum.photos/id/684/400/400">
+                    </div>
+                    <div class="card__content--row mini--content">
+                        <a href="Docs/Product-Listing.html" class="subtitle-2">New Products</a>
+                        <p class="body-2">| Test</p>
+                    </div>
+                    <p class="subtitle-2 card__tag">NEW</p>
+                </div>
+                <div class="card card--mini m-1 box-shadow-2">
+                    <div class="card__img--mini image--responsive">
+                        <img src="https://picsum.photos/id/684/400/400">
+                    </div>
+                    <div class="card__content--row mini--content">
+                        <a href="Docs/Product-Listing.html" class="subtitle-2">New Products</a>
+                        <p class="body-2">| Test</p>
+                    </div>
+                    <p class="subtitle-2 card__tag">NEW</p>
+                </div>
+                <div class="card card--mini m-1 box-shadow-2">
+                    <div class="card__img--mini image--responsive">
+                        <img src="https://picsum.photos/id/684/400/400">
+                    </div>
+                    <div class="card__content--row mini--content">
+                        <a href="Docs/Product-Listing.html" class="subtitle-2">New Products</a>
+                        <p class="body-2">| Test</p>
+                    </div>
+                    <p class="subtitle-2 card__tag">NEW</p>
+                </div>
+                <div class="card card--mini m-1 box-shadow-2">
+                    <div class="card__img--mini image--responsive">
+                        <img src="https://picsum.photos/id/684/400/400">
+                    </div>
+                    <div class="card__content--row mini--content">
+                        <a href="Docs/Product-Listing.html" class="subtitle-2">New Products</a>
+                        <p class="body-2">| Test</p>
+                    </div>
+                    <p class="subtitle-2 card__tag">NEW</p>
+                </div>
+                <div class="card card--mini m-1 box-shadow-2">
+                    <div class="card__img--mini image--responsive">
+                        <img src="https://picsum.photos/id/684/400/400">
+                    </div>
+                    <div class="card__content--row mini--content">
+                        <a href="Docs/Product-Listing.html" class="subtitle-2">New Products</a>
+                        <p class="body-2">| Test</p>
+                    </div>
+                    <p class="subtitle-2 card__tag">NEW</p>
+                </div>
+            </div>
         </section>
-        <section class="highlights">highlights</section>
-        <footer class="footer">footer
+        <section class="glass__highlights">
+            <div class="glass__categories--title">
+                <h4 class="header-4 m-1b">Featured</h4>
+                <p class="subtitle-1 m-1b">Browse through the various categories available to us.</p>
+                <button class="btn btn--link btn--rtl">
+                    <span class="material-icons">arrow_forward</span>
+                    <a href="/Docs/Product-Listing.html">Browse more</a>
+                </button>
+            </div>
+            <div class="glass__categories--container box-shadow br-12 flex-mid-center">
+                <div class="card card--vertical m-1r card--text--overlay box-shadow-2">
+                    <div class="card__cover cover--vertical image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+
+                        <h5 class="header-5 text--overlay p-12-24">The most expensive stuff you can imagine</h5>
+                    </div>
+                </div>
+
+                <div class="card card--vertical m-1r card--text--overlay box-shadow-2">
+                    <div class="card__cover cover--vertical image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+
+                        <h5 class="header-5 text--overlay p-12-24">The most expensive stuff you can imagine</h5>
+                    </div>
+                </div>
+                <div class="card card--vertical m-1r card--text--overlay box-shadow-2">
+                    <div class="card__cover cover--vertical image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+
+                        <h5 class="header-5 text--overlay p-12-24">The most expensive stuff you can imagine</h5>
+                    </div>
+                </div>
+                <div class="card card--vertical m-1r card--text--overlay box-shadow-2">
+                    <div class="card__cover cover--vertical image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+
+                        <h5 class="header-5 text--overlay p-12-24">The most expensive stuff you can imagine</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="glass__footer footer">
+            <div class="glass__footer--content flex-mid-center text--center">
+                <span class="material-icons md-48 icon--footer text--center">favorite</span>
+                <p class="body-1 text--footer text--center">House Of Glass was made with the intention of creating a
+                    customer friendly store
+                    which put the users satisfaction first. We hope you liked it. Feel free to connect and provide
+                    suggestions from the below means. </p>
+                <div class="nav__links__container">
+                    <ul class="nav__links__ul">
+                        <a href="https://www.twitter.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">Twitter</a>
+                        <a href="https://www.github.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">Github</a>
+                        <a href="https://www.linkedin.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">LinkedIn</a>
+                    </ul>
+                </div>
+            </div>
+
         </footer>
     </div>
 </body>

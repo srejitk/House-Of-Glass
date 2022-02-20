@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Of Glass | Cart</title>
+    <link rel="stylesheet" href="/main-style.css">
+    <link rel="stylesheet" href="/Misc/utils.css">
+    <link rel="stylesheet" href="https://iridescent.netlify.app/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<style>
+    @media only screen and (max-width:768px) {
+        .content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .glass__form--image {
+            order: -1;
+        }
+
+        .container--single {
+            grid-template-rows: 12rem auto 20rem;
+        }
+
+        .line__breaker {
+            width: 30rem;
+            height: 2px;
+            background-color: var(--component-grey-01);
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .glass__search {
+            width: 2rem;
+            min-width: none;
+        }
+
+        .glass__hero--title {
+            display: none;
+        }
+
+        .glass__container--row {
+            margin: 0rem auto;
+        }
+
+        .glass__header {
+            height: fit-content;
+            flex-wrap: nowrap;
+
+        }
+
+        .glass__hero--sidebar {
+            flex-direction: column;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+    }
+
+    .glass__input--options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 100%;
+        width: inherit;
+    }
+
+    .glass__form--input {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
+    }
+
+    .outline {
+        outline: 2px solid
+    }
+
+
+
+    .box-shadow {
+        box-shadow: 0px 2px 4px rgba(97, 97, 97, 0.18), 0px 4px 8px rgba(97, 97, 97, 0.18);
+    }
+
+    .glass__footer {
+        flex-direction: column;
+    }
+
+    .light--text {
+        color: white;
+
+    }
+
+    .badge--icon {
+        top: 10px;
+        right: 10px;
+        transform: translate(50%, -50%);
+    }
+
+    /* Add in Utils */
+    .position-fixed {
+        position: fixed;
+    }
+
+    .top {
+        top: 0;
+    }
+
+    .left {
+        left: 0;
+    }
+
+    .right {
+        right: 0;
+    }
+
+    .bottom {
+        bottom: 0;
+    }
+
+    /* Cart Page */
+
+    .glass__checkout {
+        width: 35%;
+        padding: 1rem 2rem;
+        top: 100px;
+        right: 0px;
+        transform: translate(-50%, 50%);
+        margin-top: -3rem;
+    }
+
+    .content {
+        display: flex;
+        justify-content: flex-start;
+        max-width: 100%;
+    }
+
+
+    .glass__container {
+        display: flex;
+        max-width: 60%;
+        width: inherit;
+        margin: 1rem 1rem 1rem 8rem;
+    }
+
+    .items--sum,
+    .items--discount,
+    .items--delivery,
+    .items--total,
+    .items--savings {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .glass__subtitle {
+        width: 100%;
+
+    }
+</style>
+
+<body>
+    <div class="container--single">
+        <!-- Header HTML -->
+        <header id="header" class="glass__header">
+            <div class="glass__navbar flex--row--wrap outline">
+                <div class="glass__hero--logo">
+                    <a class="glass__hero--sidebar">
+                        <span id="hamburger_open" class="material-icons icon--sidebar">menu</span>
+                        <span id="hamburger_close" class="material-icons icon--sidebar">menu_open</span>
+                        <h5 class="glass__hero--title header-5">House Of Glass</h5>
+                    </a>
+                </div>
+                <div class="glass__header--search input__container">
+                    <input type="search" class="input__field glass__search br-24 position-relative"
+                        placeholder="What today?" name="searchbar" id="search-bar">
+                    <Button class="btn material-icons glass__icon--search  md-24 m-1l">search</Button>
+                </div>
+                <div class="glass__header--links">
+                    <ul class="glass__header--ul flex-mid-center">
+                        <a href="/index.html" class="header glass__links hoverOn--round">Home</a>
+                        <a href="/index.html" class="header glass__links hoverOn--round">Sign Out</a>
+                        <a href="/Docs/Cart.html"><span
+                                class="material-icons glass__links hoverOn--round  position-relative">shopping_cart
+                                <div class="badge badge--small badge--icon flex-mid-center light--text">1</div>
+                            </span></a>
+                        <a href="/Docs/Wishlist.html"><span
+                                class="material-icons glass__links hoverOn--round position-relative">favorite
+                                <div class="badge badge--small badge--icon flex-mid-center light--text">4</div>
+                            </span></a>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main class="content flex--row--nowrap position-relative">
+
+            <div class="glass__container  flex--row--wrap gap20 ">
+
+                <h3 class="header-3 glass__subtitle ">My Cart</h3>
+                <!-- Horizontal Card -->
+                <div class="card card--horizontal box-shadow">
+                    <div class="card__contents">
+                        <div class="card__content--column card__text">
+                            <h5 class="header-5">The most expensive stuff you can imagine</h5>
+                            <div class="container--row">
+                                <p class="subtitle-1 item--sale text--primary">Rs. 999</p>
+                                <p class="body-2 item--items">Rs. 2443</p>
+                                <p class="subtitle-1 item--info text--grey">Free Shipping</p>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card__content--row card__footer">
+                            <div class="container--row">
+                                <div class="btn btn--small flex-mid-center btn--primary--outline">
+
+                                    <p class="subtitle-1 btn--text text">-</p>
+                                </div>
+                                <div class="btn btn--small flex-mid-center btn--primary">
+
+                                    <p class="subtitle-1 btn--text text">1</p>
+                                </div>
+
+                                <div class="btn btn--small flex-mid-center btn--primary--outline">
+
+                                    <p class="subtitle-1 btn--text text">+</p>
+                                </div>
+                                <div class="btn btn--small btn--outline--like">
+                                    <span class="material-icons icon--">bookmark</span>
+                                    <p class="subtitle-1 btn--txt">Save</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__cover card__img--large gap20 image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+                        <div class="rating">
+                            <p class="subtitle-2 text--grey">4.2</p>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star_half</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horizontal Card -->
+                <div class="card card--horizontal box-shadow">
+                    <div class="card__contents">
+                        <div class="card__content--column card__text">
+                            <h5 class="header-5">The most expensive stuff you can imagine</h5>
+                            <div class="container--row">
+                                <p class="subtitle-1 item--sale text--primary">Rs. 999</p>
+                                <p class="body-2 item--items">Rs. 2443</p>
+                                <p class="subtitle-1 item--info text--grey">Free Shipping</p>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card__content--row card__footer">
+                            <div class="container--row">
+
+                                <div class="btn btn--small btn--primary">
+                                    <span class="material-icons text">shopping_cart</span>
+                                    <p class="subtitle-1 btn--text text">To cart</p>
+                                </div>
+                                <div class="btn btn--small btn--outline--like">
+                                    <span class="material-icons icon--">clear</span>
+                                    <p class="subtitle-1 btn--txt">Clear</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__cover card__img--large gap20 image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+                        <div class="rating">
+                            <p class="subtitle-2 text--grey">4.2</p>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star_half</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horizontal Card -->
+                <div class="card card--horizontal box-shadow">
+                    <div class="card__contents">
+                        <div class="card__content--column card__text">
+                            <h5 class="header-5">The most expensive stuff you can imagine</h5>
+                            <div class="container--row">
+                                <p class="subtitle-1 item--sale text--primary">Rs. 999</p>
+                                <p class="body-2 item--items">Rs. 2443</p>
+                                <p class="subtitle-1 item--info text--grey">Free Shipping</p>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card__content--row card__footer">
+                            <div class="container--row">
+                                <div class="btn btn--small flex-mid-center btn--primary--outline">
+
+                                    <p class="subtitle-1 btn--text text">-</p>
+                                </div>
+                                <div class="btn btn--small flex-mid-center btn--primary">
+
+                                    <p class="subtitle-1 btn--text text">5</p>
+                                </div>
+
+                                <div class="btn btn--small flex-mid-center btn--primary--outline">
+
+                                    <p class="subtitle-1 btn--text text">+</p>
+                                </div>
+                                <div class="btn btn--small btn--outline--like">
+                                    <span class="material-icons icon--">bookmark</span>
+                                    <p class="subtitle-1 btn--txt">Save</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__cover card__img--large gap20 image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+                        <div class="rating">
+                            <p class="subtitle-2 text--grey">4.2</p>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star_half</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Horizontal Card -->
+                <div class="card card--horizontal box-shadow">
+                    <div class="card__contents">
+                        <div class="card__content--column card__text">
+                            <h5 class="header-5">The most expensive stuff you can imagine</h5>
+                            <div class="container--row">
+                                <p class="subtitle-1 item--sale text--primary">Rs. 999</p>
+                                <p class="body-2 item--items">Rs. 2443</p>
+                                <p class="subtitle-1 item--info text--grey">Free Shipping</p>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="card__content--row card__footer">
+                            <div class="container--row">
+                                <div class="btn btn--small flex-mid-center btn--primary--outline">
+
+                                    <p class="subtitle-1 btn--text text">-</p>
+                                </div>
+                                <div class="btn btn--small flex-mid-center btn--primary">
+
+                                    <p class="subtitle-1 btn--text text">3</p>
+                                </div>
+
+                                <div class="btn btn--small flex-mid-center btn--primary--outline">
+
+                                    <p class="subtitle-1 btn--text text">+</p>
+                                </div>
+                                <div class="btn btn--small btn--outline--like">
+                                    <span class="material-icons icon--">bookmark</span>
+                                    <p class="subtitle-1 btn--txt">Save</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__cover card__img--large gap20 image--responsive">
+                        <img src="https://picsum.photos/id/684/600/400">
+                        <div class="rating">
+                            <p class="subtitle-2 text--grey">4.2</p>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star</span>
+                            <span class="material-icons md-18 star_selected">star_half</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="linebreaker"></div>
+            <div class="glass__checkout position-fixed top box-shadow flex--column--wrap gap20">
+                <h5 class="header-5">Price Breakdown</h5>
+                <div class="items--sum">
+                    <p class="subtitle-1">Price ( 7 Items )</p>
+                    <p class="body-1">Rs. 5,299</p>
+                </div>
+                <div class="items--discount">
+                    <p class="subtitle-1">Discount</p>
+                    <p class="body-1">-Rs. 299</p>
+                </div>
+                <div class="items--delivery">
+                    <p class="subtitle-1">Delivery Charges</p>
+                    <p class="body-1">Rs. 99</p>
+                </div>
+                <div class="items--total">
+                    <p class="subtitle-1">Total</p>
+                    <p class="body-1">Rs. 5,099</p>
+                </div>
+                <div class="items--savings">
+                    <p class="subtitle-1">You've Saved</p>
+                    <p class="body-1">Rs. 299</p>
+
+                </div>
+                <button class="btn btn--primary">Place Order </button>
+            </div>
+
+        </main>
+        <footer class="glass__footer footer">
+            <div class="glass__footer--content flex-mid-center text--center">
+                <span class="material-icons md-48 icon--footer text--center">favorite</span>
+                <p class="body-1 text--footer text--center">House Of Glass was made with the intention of creating a
+                    customer friendly store
+                    which put the users satisfaction first. We hope you liked it. Feel free to connect and provide
+                    suggestions from the below means. </p>
+                <div class="nav__links__container">
+                    <ul class="nav__links__ul">
+                        <a href="https://www.twitter.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">Twitter</a>
+                        <a href="https://www.github.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">Github</a>
+                        <a href="https://www.linkedin.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">LinkedIn</a>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>

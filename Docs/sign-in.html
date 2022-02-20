@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Of Glass | Sign in</title>
+    <link rel="stylesheet" href="/main-style.css">
+    <link rel="stylesheet" href="/Misc/utils.css">
+    <link rel="stylesheet" href="https://iridescent.netlify.app/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<style>
+    body {
+        min-width: 100%;
+    }
+
+    .container--single {
+        display: grid;
+        margin: 0px;
+        padding: 0px;
+        max-width: 100%;
+        height: 100vh;
+        gap: 20px 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4rem auto 19rem;
+        grid-template-areas:
+            "navbar"
+            "content"
+            "footer";
+    }
+
+    /* Sign Up Styles */
+
+    .glass__form {
+        margin: 2rem;
+        padding: 2rem;
+    }
+
+    .glass__input {
+        background-color: var(--component-grey-01);
+        color: black;
+        font-weight: 500;
+    }
+
+    .glass__input::placeholder {
+        color: #414141;
+    }
+
+    .glass__btn {
+        width: 21.5rem;
+        border: none;
+        transition: all cubic-bezier(0.4, 0, 0.2, 1) 350ms;
+        border: 2px solid transparent;
+    }
+
+
+    .glass__btn:hover {
+        border: none;
+        transition: all cubic-bezier(0.4, 0, 0.2, 1) 350ms;
+    }
+
+    .glass__btn-1:hover {
+        color: var(--component-blue-05);
+        border: 2px solid var(--component-grey-01);
+    }
+
+
+    .glass__btn-2 {
+        background-color: var(--white);
+        color: var(--component-blue-05);
+        border: 2px solid var(--component-grey-01);
+    }
+
+    .glass__btn-2:hover {
+        color: var(--white);
+        border: 2px solid var(--component-grey-01);
+    }
+
+    .glass__form--wrapper {
+        background-color: var(--white);
+        margin: 1rem auto;
+        max-width: max-content;
+        min-width: fit-content;
+        gap: 1rem;
+        padding: 1rem;
+        height: calc(width);
+    }
+
+    .text--terms {
+        width: 60%;
+    }
+
+
+
+    .glass__form--image {
+        border-radius: 50%;
+        margin: 1rem auto;
+        max-width: 37.5rem;
+        min-width: 15rem;
+        max-height: 37.5rem;
+        min-height: 15rem;
+    }
+
+    .glass__form--image img {
+        width: 100%;
+        height: 32rem;
+        width: 32rem;
+        border-radius: 50%;
+    }
+
+    .line__breaker {
+        width: 2px;
+        height: 70vh;
+        background-color: var(--component-grey-01);
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
+
+    .content {
+        background-color: var(--white);
+        align-items: center;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width:570px) {
+        .content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .glass__form--image {
+            order: -1;
+        }
+
+        .line__breaker {
+            width: 30rem;
+            height: 2px;
+            background-color: var(--component-grey-01);
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .glass__search {
+            width: 300px;
+        }
+
+        .glass__hero--title {
+            display: none;
+        }
+
+
+    }
+
+    .glass__input--options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 100%;
+        width: inherit;
+    }
+
+    .glass__form--input {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
+    }
+</style>
+
+<body>
+    <div class="container--single">
+        <!-- Header HTML -->
+        <header id="header" class="glass__header">
+            <div class="glass__navbar">
+                <div class="glass__hero--logo">
+                    <a class="glass__hero--sidebar">
+                        <span id="hamburger_open" class="material-icons icon--sidebar">menu</span>
+                        <span id="hamburger_close" class="material-icons icon--sidebar">menu_open</span>
+                        <h3 class="glass__hero--title header-5">House Of Glass</h3>
+                        <div class="glass__header--search input__container">
+                            <input type="search" class="input__field glass__search br-24 position-relative"
+                                placeholder="What today?" name="searchbar" id="search-bar">
+                            <Button class="btn material-icons glass__icon--search md-24 m-1l">search</Button>
+                        </div>
+                    </a>
+                </div>
+                <div class="glass__header--links">
+                    <ul class="glass__header--ul flex-mid-center">
+                        <a href="/index.html" class="header glass__links hoverOn--round">Home</a>
+                        <a href="/Docs/sign-up.html" class="header glass__links hoverOn--round">Sign Up</a>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main class="content grid col2x2">
+            <div class=" glass__form--wrapper position-relative flex-mid-center br-8 flex-column-wrap">
+                <h4 class="header-5">Sign In</h3>
+                    <p class="body-1 text--center">Join back and get access to exclusive items</p>
+
+                    <!-- Input Field Outline --Email -->
+                    <div class="input__container">
+                        <input type="email" placeholder="Email" id="email"
+                            class="input__field glass__input glass__input--email" required>
+                    </div>
+                    <!-- Input Field Outline --Password -->
+                    <div class="input__container">
+                        <input type="password" placeholder="Password" id="pwd"
+                            class="input__field glass__input glass__input--pwd" required>
+                    </div>
+                    <div class="glass__input--options">
+                        <!-- Checkbox Input -->
+                        <div class="input__container glass__form--input">
+                            <label for="remember-me" class="input--sidelabel">Remember Me</label>
+                            <input type="checkbox" id="remember-me" class=" input--field--checkbox input--demo"
+                                placeholder="Peter Parker" required="">
+                        </div>
+
+                        <a href="#" class="glass__input--forgot subtitle-1">Forgot Password?</a>
+                    </div>
+
+
+                    <p class="text--terms caption text--center">By signing in you agree to accept all terms and
+                        conditions and
+                        agree to
+                        abide by the
+                        platform rules</p>
+                    <div class="btn btn--primary btn--large glass__btn glass__btn-1">Log In</div>
+                    <p class="subtitle-2">Not a Member?</p>
+                    <div class="btn btn--large glass__btn glass__btn-2">Sign Up</div>
+
+            </div>
+            <div class="line__breaker position-absolute"></div>
+            <div class="box-shadow glass__form--image flex-mid-center box-shadow image--responsive">
+                <img src="https://picsum.photos/id/684/600/400" alt="">
+            </div>
+        </main>
+        <footer class="glass__footer footer flex-mid-center">
+            <div class="glass__footer--content flex-mid-center text--center">
+                <span class="material-icons md-48 icon--footer text--center">favorite</span>
+                <p class="body-1 text--footer text--center">House Of Glass was made with the intention of creating a
+                    customer friendly store
+                    which put the users satisfaction first. We hope you liked it. Feel free to connect and provide
+                    suggestions from the below means. </p>
+                <div class="nav__links__container">
+                    <ul class="nav__links__ul">
+                        <a href="https://www.twitter.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">Twitter</a>
+                        <a href="https://www.github.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">Github</a>
+                        <a href="https://www.linkedin.com/srejitk" target="__blank"
+                            class="footer nav__links nav__links--footer">LinkedIn</a>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
