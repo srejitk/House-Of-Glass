@@ -6,7 +6,7 @@
     height: 100vh;
     gap: 20px 10px;
     grid-template-columns: 1fr;
-    grid-template-rows: 4rem 45rem 19rem 15.625rem 12.5rem;
+    grid-template-rows: 4rem 45rem 19rem 20rem 12.5rem;
     grid-template-areas:
         "navbar"
         "content"
