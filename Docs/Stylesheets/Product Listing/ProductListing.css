@@ -1,0 +1,15 @@
+/* Product Listing Page */
+.glass__container--product {
+    height: calc(100vh);
+    overflow-y: scroll;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content--grid {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+}
