@@ -26,7 +26,8 @@
 .items--sum,
 .items--discount,
 .items--delivery,
-.items--total {
+.items--total,
+.items--savings {
     display: flex;
     justify-content: space-between;
 }
