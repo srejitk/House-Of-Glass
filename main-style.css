@@ -24,6 +24,44 @@
         "footer"
 }
 
+
+.m-1r{
+    margin-right: 1rem;
+}
+
+.m-1l{
+    margin-left: 1rem;
+}
+
+.m-1t{
+    margin-top: 1rem;
+}
+
+.m-1b{
+    margin-bottom: 1rem;
+}
+
+/* Margin 2rem */
+.m-2r{
+    margin-right: 2rem;
+}
+
+.m-2l{
+    margin-left: 2rem;
+}
+
+.m-2t{
+    margin-top: 2rem;
+}
+
+.m-2b{
+    margin-bottom: 2rem;
+}
+
+
+.outline {
+    outline: 2px solid
+}
 .navbar {
     grid-area: navbar;
     width: 100%;

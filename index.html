@@ -12,22 +12,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <style>
-    .light-mode {
-        --background-color: #F4F2F7;
-        --forground-color: #FFFFFF;
-        --foreground-color-2: #F9F9F9;
-        --primary-text: #27242C;
-        --secondary-text: #8A8A8E;
-    }
-
-    .dark-mode {
-        --background-color: #181719;
-        --forground-color: #27242C;
-        --foreground-color-2: #3D3A41;
-        --primary-text: #FFFFFF;
-        --secondary-text: #F3F3F9;
-    }
-
     .content--homepage {
         grid-area: content;
         width: 100%;
@@ -119,7 +103,7 @@
     }
 </style>
 
-<body>
+<body id="glass-body" class="glass__body light-mode">
     <div class="container--hero">
         <!-- Header HTML -->
         <header id="header" class="glass__header">
@@ -144,7 +128,7 @@
                 </div>
             </div>
         </header>
-        <main class="content--homepage">
+        <main class="content--homepage light-mode">
             <section class="banner_section-1"></section>
             <section class="banner_section-2"></section>
             <section class="banner_section-3"></section>
@@ -274,5 +258,7 @@
         </footer>
     </div>
 </body>
+
+<script src="/js/app.js"></script>
 
 </html>

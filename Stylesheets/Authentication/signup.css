@@ -7,7 +7,7 @@
 
 .glass__input {
     background-color: var(--component-grey-01);
-    color: black;
+    color: var(--black);
     font-weight: 500;
 }
 

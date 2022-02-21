@@ -25,7 +25,7 @@
         }
 
         .container--single {
-            grid-template-rows: 12rem auto 20rem;
+            grid-template-rows: 20rem auto auto;
         }
 
         .line__breaker {
@@ -42,9 +42,6 @@
             min-width: none;
         }
 
-        .glass__hero--title {
-            display: none;
-        }
 
         .glass__container--row {
             margin: 0rem auto;
@@ -61,6 +58,8 @@
             gap: 50px;
             align-items: flex-start;
         }
+
+
 
     }
 
@@ -129,10 +128,8 @@
     .glass__checkout {
         width: 35%;
         padding: 1rem 2rem;
-        top: 100px;
-        right: 0px;
-        transform: translate(-50%, 50%);
         margin-top: -3rem;
+        position: relative;
     }
 
     .content {
@@ -168,7 +165,7 @@
     <div class="container--single">
         <!-- Header HTML -->
         <header id="header" class="glass__header">
-            <div class="glass__navbar flex--row--wrap outline">
+            <div class="glass__navbar flex--row--wrap">
                 <div class="glass__hero--logo">
                     <a class="glass__hero--sidebar">
                         <span id="hamburger_open" class="material-icons icon--sidebar">menu</span>
@@ -386,7 +383,7 @@
 
             </div>
             <div class="linebreaker"></div>
-            <div class="glass__checkout position-fixed top box-shadow flex--column--wrap gap20">
+            <div class="glass__checkout top box-shadow flex--column--wrap gap20">
                 <h5 class="header-5">Price Breakdown</h5>
                 <div class="items--sum">
                     <p class="subtitle-1">Price ( 7 Items )</p>
